@@ -13,4 +13,15 @@ class ProductsController < ApplicationController
     slaughterhouse_five = Product.find(2)
     render json: slaughterhouse_five
   end
+
+  def query_params_method
+    product_id = params["id"].to_i
+    render json: Product.find(product_id)
+  end
+
+  def url_segment_params_method
+    product_id = params[:wildcard].to_i
+    render json: Product.find(product_id)
+  end
 end
+  
