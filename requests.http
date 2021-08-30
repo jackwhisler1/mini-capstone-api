@@ -1,0 +1,30 @@
+GET http://127.0.0.1:3000/products
+
+###
+
+POST http://127.0.0.1:3000/products
+Content-Type: application/json
+
+{
+  "name": "The Sirens of Titan",
+  "price": 16,
+  "image_url": "https://upload.wikimedia.org/wikipedia/en/5/57/TheSirensofTitan%281959%29.jpg",
+  "description": "The Sirens of Titan is a comic science fiction novel by Kurt Vonnegut Jr., first published in 1959. His second novel, it involves issues of free will, omniscience, and the overall purpose of human history. Much of the story revolves around a Martian invasion of Earth."
+}
+
+###
+
+GET http://127.0.0.1:3000/products/1
+
+###
+
+PATCH http://127.0.0.1:3000/products/6
+Content-Type: application/json
+
+{
+  "price": 9
+}
+
+###
+
+DELETE http://127.0.0.1:3000/products/5

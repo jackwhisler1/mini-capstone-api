@@ -1,27 +1,39 @@
 class ProductsController < ApplicationController
-  def all_products_method
-    all_products = Product.all
-    render json: all_products
+  def index
+    products = Product.all
+    render json: products
   end
 
-  def mother_night_method
-    mother_night = Product.find(1)
-    render json: mother_night
+  def create
+    product = Product.new(
+      name: params[:name],
+      price: params[:price],
+      image_url: params[:image_url],
+      description: params[:description]
+    )
+    product.save
+    render json: product
   end
 
-  def slaughterhousefive_method 
-    slaughterhouse_five = Product.find(2)
-    render json: slaughterhouse_five
+  def show
+    product = Product.find(params[:id])
+    render json: product
   end
 
-  def query_params_method
-    product_id = params["id"].to_i
-    render json: Product.find(product_id)
+  def update
+    product = Product.find(params[:id])
+    product.name = params[:name] || product.name
+    product.price = params[:price] || product.price
+    product.image_url = params[:image_url] || product.image_url
+    product.description = params[:description] || product.description
+    product.save
+    render json: product
   end
 
-  def url_segment_params_method
-    product_id = params[:wildcard].to_i
-    render json: Product.find(product_id)
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    render json: {destruction: "Complete"}
   end
 end
   
