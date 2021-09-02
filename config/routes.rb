@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   patch "/products/:id" => "products#update"
   delete "/products/:id" => "products#destroy"
 
+  get "/suppliers" => "suppliers#index"
+
 
   # # query parameter
   # get "/products", controller: "products", action: "query_params_method"
