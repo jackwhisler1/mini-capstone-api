@@ -6,11 +6,10 @@ Rails.application.routes.draw do
   delete "/products/:id" => "products#destroy"
 
   get "/suppliers" => "suppliers#index"
+  post "/users" => "users#create"
+  post "/sessions" => "sessions#create"
 
-
-  # # query parameter
-  # get "/products", controller: "products", action: "query_params_method"
-
-  # # url segment parameter
-  # get "/products/:wildcard", controller: "products", action: "url_segment_params_method"
+  get "/orders" => "orders#index"
+  post "/orders" => "orders#create"
+  get "/orders/:id" => "orders#show"
 end

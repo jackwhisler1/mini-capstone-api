@@ -1,0 +1,34 @@
+Exercise: 
+1. Change your mini-capstone so there can be multiple images, instead of just one. (This will take multiple steps!) 
+
+rails generate migration RemoveImageUrlFromProducts image_url:string
+
+
+You will need to remove the image_url attribute from the Product model and create an entirely new Image model to do this. 
+Use url as the image attribute to get this to work seamlessly with the mini-capstone front end.
+
+Need an images table
+     Populate with image_urls
+
+
+Associate with Products
+Assign product_id
+
+
+Image 
+
+belongs_to :product
+
+Product
+
+has_many :images
+
+
+
+2. Change your json serializer to show all images with each product.
+
+
+You can test your code using the frontend at http://mini-capstone.peterxjang.com/model-associations/products. If your associations are working correctly, it will show multiple images on the products show page in a carousel!
+3. Bonus: Fix your product’s create and update actions! (They are broken because you changed how images are saved…)
+4. Bonus: Make it so a user can create new images for a given product.
+Commit and push your changes (A friendly reminder!)

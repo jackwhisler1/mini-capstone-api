@@ -1,6 +1,19 @@
 class Product < ApplicationRecord
   belongs_to :supplier
 
+  has_many :images
+  has_many :orders
+
+# Validation
+  validates :name, uniqueness: true
+  validates :name, presence: true
+  validates :price, numericality: {greater_than: 0}
+  validates :price, numericality: {less_than: 10000}
+  validates :description, presence: true
+  validates :description, length: {maximum: 500}
+  validates :description, length: {minimum: 20}
+  validates :inventory, numericality: {greater_than: 0}
+
   def is_discounted?
     price < 10 ? true : false
   end

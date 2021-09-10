@@ -1,4 +1,5 @@
 GET http://127.0.0.1:3000/products
+Authorization: Bearer fhW7XhJV39l7QJb59bqH6Y3Da8L_eWJrDHP1GEWFM
 
 ###
 
@@ -6,11 +7,16 @@ POST http://127.0.0.1:3000/products
 Content-Type: application/json
 
 {
-  "name": "The Sirens of Titan",
-  "price": 16,
-  "image_url": "https://upload.wikimedia.org/wikipedia/en/5/57/TheSirensofTitan%281959%29.jpg",
-  "description": "The Sirens of Titan is a comic science fiction novel by Kurt Vonnegut Jr., first published in 1959. His second novel, it involves issues of free will, omniscience, and the overall purpose of human history. Much of the story revolves around a Martian invasion of Earth."
+  "name": "frank",
+  "price": -30
 }
+
+# 
+#   "name": "The Sirens of Titan",
+#   "price": 16,
+#   "image_url": "https://upload.wikimedia.org/wikipedia/en/5/57/TheSirensofTitan%281959%29.jpg",
+#   "description": "The Sirens of Titan is a comic science fiction novel by Kurt Vonnegut Jr., first published in 1959. His second novel, it involves issues of free will, omniscience, and the overall purpose of human history. Much of the story revolves around a Martian invasion of Earth."
+# 
 
 ###
 
@@ -22,9 +28,50 @@ PATCH http://127.0.0.1:3000/products/6
 Content-Type: application/json
 
 {
-  "price": 9
+  "price": -3
 }
 
 ###
 
 DELETE http://127.0.0.1:3000/products/5
+
+###
+
+### Users create (signup)
+  POST http://localhost:3000/users
+  Content-Type: application/json
+
+  {
+    "name": "Big Al",
+    "email": "bigal@test.com",
+    "password": "password",
+    "password_confirmation": "password"
+  }
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+  {
+    "email": "bigal@test.com",
+    "password": "password"
+  }
+
+### Order create
+POST http://localhost:3000/orders
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzEzODc4NjV9.gumyurXo6ETRRr2FMkt3vPe4QACtokpVxxUEnoURDsE
+
+
+{
+    "product_id": 1,
+    "quantity": 3
+}
+
+###
+GET http://localhost:3000/orders
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzEzODgxNTZ9._CDmtPCeP-CkNjflY3_Ny7IgQvVOzWZNU-mM6H6BeXI
+
+###
+GET http://localhost:3000/orders/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzEzODgxNTZ9._CDmtPCeP-CkNjflY3_Ny7IgQvVOzWZNU-mM6H6BeXI

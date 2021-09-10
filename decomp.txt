@@ -1,0 +1,14 @@
+* Generate an Order model
+rails generate model Order user_id:integer product_id:integer quantity:integer 'subtotal:decimal{9,2}' 'tax:decimal{9,2}' 'total:decimal{9,2}'
+
+* Associate order with product (in our case, an order belongs_to product)
+* Associate order with user (belongs_to user)
+* Associate product with order (has_many)
+* Associate user with order (has_many)
+
+* Generate orders controller
+* Create restful orders create route
+* Create method to calc total cost. Pull price from product using product_id
+* Create method to check quantity vs inventory, if less than inventory, continue with order
+* Subtract quantity of order from product inventory
+

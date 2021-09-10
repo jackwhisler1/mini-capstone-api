@@ -1,19 +1,25 @@
 class ProductsController < ApplicationController
   def index
-    products = Product.all
-    render json: products
+    if current_user
+      products = Product.all
+      render json: products
+    else
+      runder json: { message: "You must be logged in to do that." }
+    end
   end
 
   def create
     product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_url: params[:image_url],
       description: params[:description],
       supplier_id: params[:supplier_id]
     )
-    product.save
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: product.errors.full_messages
+    end
   end
 
   def show
@@ -25,11 +31,13 @@ class ProductsController < ApplicationController
     product = Product.find(params[:id])
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
     product.description = params[:description] || product.description
     product.supplier_id = params[:supplier_id] || product.supplier_id
-    product.save
-    render json: product
+    if product.save
+      render json: product
+    else
+      render json: product.errors.full_messages, status: :unprocessable_entity
+    end
   end
 
   def destroy
