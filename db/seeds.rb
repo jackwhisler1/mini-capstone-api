@@ -9,6 +9,41 @@
 #   phone_number: "900-290-2668"
 # )
 
+# Category.create([
+#   {name: "Science Fiction"},
+#   {name: "Nonfiction"},
+#   {name: "Fantasy"},  
+#   {name: "Realistic Fiction"},
+#   {name: "Fiction"},
+#   {name: "Humor"},
+#   {name: "Biography"}
+# ])
+
+ProductCategory.create(
+  [
+    { product_id: 1, category_id: 1},
+    { product_id: 1, category_id: 5},
+    { product_id: 1, category_id: 6},
+    { product_id: 1, category_id: 7},
+    { product_id: 2, category_id: 2},
+    { product_id: 2, category_id: 1},
+    { product_id: 2, category_id: 7},
+    { product_id: 2, category_id: 6},
+    { product_id: 3, category_id: 1},
+    { product_id: 3, category_id: 2},
+    { product_id: 3, category_id: 7},
+    { product_id: 3, category_id: 6},
+    { product_id: 4, category_id: 1},
+    { product_id: 4, category_id: 2},
+    { product_id: 4, category_id: 6},
+    { product_id: 4, category_id: 7},
+    { product_id: 6, category_id: 1},
+    { product_id: 6, category_id: 5},
+    { product_id: 6, category_id: 7},
+    { product_id: 6, category_id: 8}
+  ]
+)
+
 # Product.create(name: "Testing book", price: 9, image_url: "", description: "A great book for testing")
 
 # product = Product.find(1)
@@ -31,45 +66,45 @@
 # product.supplier_id = 1
 # product.save
 
-image = Image.find(1)
-image.product_id = 1
-image.save
+# image = Image.find(1)
+# image.product_id = 1
+# image.save
 
-image = Image.find(2)
-image.product_id = 1
-image.save
+# image = Image.find(2)
+# image.product_id = 1
+# image.save
 
-image = Image.find(3)
-image.product_id = 2
-image.save
+# image = Image.find(3)
+# image.product_id = 2
+# image.save
 
-image = Image.find(4)
-image.product_id = 2
-image.save
+# image = Image.find(4)
+# image.product_id = 2
+# image.save
 
-image = Image.find(5)
-image.product_id = 3
-image.save
+# image = Image.find(5)
+# image.product_id = 3
+# image.save
 
-image = Image.find(6)
-image.product_id = 3
-image.save
+# image = Image.find(6)
+# image.product_id = 3
+# image.save
 
-image = Image.find(7)
-image.product_id = 4
-image.save
+# image = Image.find(7)
+# image.product_id = 4
+# image.save
 
-image = Image.find(8)
-image.product_id = 4
-image.save
+# image = Image.find(8)
+# image.product_id = 4
+# image.save
 
-image = Image.find(9)
-image.product_id = 6
-image.save
+# image = Image.find(9)
+# image.product_id = 6
+# image.save
 
-image = Image.find(10)
-image.product_id = 6
-image.save
+# image = Image.find(10)
+# image.product_id = 6
+# image.save
 
 
 
