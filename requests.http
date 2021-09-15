@@ -1,8 +1,7 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE2NDE5NDl9.RZVzFSNsA_DnIsoYK-LAxGEUeX7rpQCwNnhHhFZ1Fs0
 
 ### Products index
-GET http://127.0.0.1:3000/products
-Authorization: Bearer {{jwt}}
+GET http://127.0.0.1:3000/products?category=Humor
 
 ### Create Product
 
@@ -13,13 +12,6 @@ Content-Type: application/json
   "name": "frank",
   "price": -30
 }
-
-# 
-#   "name": "The Sirens of Titan",
-#   "price": 16,
-#   "image_url": "https://upload.wikimedia.org/wikipedia/en/5/57/TheSirensofTitan%281959%29.jpg",
-#   "description": "The Sirens of Titan is a comic science fiction novel by Kurt Vonnegut Jr., first published in 1959. His second novel, it involves issues of free will, omniscience, and the overall purpose of human history. Much of the story revolves around a Martian invasion of Earth."
-# 
 
 ### Products show
 
@@ -79,3 +71,16 @@ Authorization: Bearer {{jwt}}
 ### Orders show
 GET http://localhost:3000/orders/2
 Authorization: Bearer {{jwt}}
+
+
+### Carted Products create
+POST http://localhost:3000/carted_products
+Content-Type: application/json
+
+{ 
+  "product_id": 1, 
+  "user_id": 3, 
+  "quantity": 5, 
+  "status": "ordered", 
+  "order_id": 3
+}

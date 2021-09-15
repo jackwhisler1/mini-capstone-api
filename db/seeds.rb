@@ -9,6 +9,20 @@
 #   phone_number: "900-290-2668"
 # )
 
+# CartedProduct.create([
+#   { product_id: 1, user_id: 1, quantity: 1, status: "ordered", order_id: nil },
+#   { product_id: 2, user_id: 1, quantity: 1, status: "removed", order_id: nil },
+#   { product_id: 3, user_id: 1, quantity: 2, status: "carted", order_id: nil },
+#   { product_id: 4, user_id: 2, quantity: 1, status: "removed", order_id: nil},
+#   { product_id: 6, user_id: 2, quantity: 3, status: "carted", order_id:  nil},
+#   { product_id: 1, user_id: 2, quantity: 1, status: "carted", order_id: nil } 
+# ])
+
+# Order.create([
+#   { user_id: 1 },
+#   { user_id: 2 }
+# ])
+
 # Category.create([
 #   {name: "Science Fiction"},
 #   {name: "Nonfiction"},
@@ -19,30 +33,30 @@
 #   {name: "Biography"}
 # ])
 
-ProductCategory.create(
-  [
-    { product_id: 1, category_id: 1},
-    { product_id: 1, category_id: 5},
-    { product_id: 1, category_id: 6},
-    { product_id: 1, category_id: 7},
-    { product_id: 2, category_id: 2},
-    { product_id: 2, category_id: 1},
-    { product_id: 2, category_id: 7},
-    { product_id: 2, category_id: 6},
-    { product_id: 3, category_id: 1},
-    { product_id: 3, category_id: 2},
-    { product_id: 3, category_id: 7},
-    { product_id: 3, category_id: 6},
-    { product_id: 4, category_id: 1},
-    { product_id: 4, category_id: 2},
-    { product_id: 4, category_id: 6},
-    { product_id: 4, category_id: 7},
-    { product_id: 6, category_id: 1},
-    { product_id: 6, category_id: 5},
-    { product_id: 6, category_id: 7},
-    { product_id: 6, category_id: 8}
-  ]
-)
+# ProductCategory.create(
+#   [
+#     { product_id: 1, category_id: 1},
+#     { product_id: 1, category_id: 5},
+#     { product_id: 1, category_id: 6},
+#     { product_id: 1, category_id: 7},
+#     { product_id: 2, category_id: 2},
+#     { product_id: 2, category_id: 1},
+#     { product_id: 2, category_id: 7},
+#     { product_id: 2, category_id: 6},
+#     { product_id: 3, category_id: 1},
+#     { product_id: 3, category_id: 2},
+#     { product_id: 3, category_id: 7},
+#     { product_id: 3, category_id: 6},
+#     { product_id: 4, category_id: 1},
+#     { product_id: 4, category_id: 2},
+#     { product_id: 4, category_id: 6},
+#     { product_id: 4, category_id: 7},
+#     { product_id: 6, category_id: 1},
+#     { product_id: 6, category_id: 5},
+#     { product_id: 6, category_id: 7},
+#     { product_id: 6, category_id: 8}
+#   ]
+# )
 
 # Product.create(name: "Testing book", price: 9, image_url: "", description: "A great book for testing")
 
