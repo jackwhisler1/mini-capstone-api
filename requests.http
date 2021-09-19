@@ -1,4 +1,4 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzE2NDE5NDl9.RZVzFSNsA_DnIsoYK-LAxGEUeX7rpQCwNnhHhFZ1Fs0
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzIxNjg3Mzd9.Wu94kvmEvGANyg7Y07aec_GSgPeYr7Kpa8BtkDILvaQ
 
 ### Products index
 GET http://127.0.0.1:3000/products?category=Humor
@@ -76,11 +76,9 @@ Authorization: Bearer {{jwt}}
 ### Carted Products create
 POST http://localhost:3000/carted_products
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 { 
-  "product_id": 1, 
-  "user_id": 3, 
-  "quantity": 5, 
-  "status": "ordered", 
-  "order_id": 3
+  "product_id": 1,  
+  "quantity": 5
 }
