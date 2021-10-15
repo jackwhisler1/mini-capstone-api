@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: product.errors.full_messages, status: :unprocessable_entity
+      render json: product.errors.full_messages, status: unprocessable_entity
     end
   end
 

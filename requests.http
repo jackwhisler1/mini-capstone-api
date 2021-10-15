@@ -1,11 +1,12 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzIxNjg3Mzd9.Wu94kvmEvGANyg7Y07aec_GSgPeYr7Kpa8BtkDILvaQ
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzQ0MTYxMjh9.PRpfeEBq3tKwZ15WxrjQLuV69PVx_dbGVnoEhP9Tsgg
+@host = http://localhost:3000
 
 ### Products index
-GET http://127.0.0.1:3000/products?category=Humor
+GET {{host}}/products?category=Humor
 
 ### Create Product
 
-POST http://127.0.0.1:3000/products
+POST {{host}}/products
 Content-Type: application/json
 
 {
@@ -15,25 +16,25 @@ Content-Type: application/json
 
 ### Products show
 
-GET http://127.0.0.1:3000/products/1
+GET {{host}}/products/1
 
 ### Products update
 
-PATCH http://127.0.0.1:3000/products/6
+PATCH {{host}}/products/6
 Content-Type: application/json
 
 {
   "price": 35,
-  "inventory": 30
+  "inventory": 39
 }
 
 ### Products destroy
 
-DELETE http://127.0.0.1:3000/products/5
+DELETE {{host}}/products/5
 
 
 ### Users create (signup)
-POST http://localhost:3000/users
+POST {{host}}/users
 Content-Type: application/json
 
   {
@@ -45,7 +46,7 @@ Content-Type: application/json
   }
 
 ### Sessions create (login)
-POST http://localhost:3000/sessions
+POST {{host}}/sessions
 Content-Type: application/json
 
   {
@@ -54,7 +55,7 @@ Content-Type: application/json
   }
 
 ### Order create
-POST http://localhost:3000/orders
+POST {{host}}/orders
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
@@ -65,16 +66,16 @@ Authorization: Bearer {{jwt}}
 }
 
 ### Orders index
-GET http://localhost:3000/orders
+GET {{host}}/orders
 Authorization: Bearer {{jwt}}
 
 ### Orders show
-GET http://localhost:3000/orders/2
+GET {{host}}/orders/2
 Authorization: Bearer {{jwt}}
 
 
 ### Carted Products create
-POST http://localhost:3000/carted_products
+POST {{host}}/carted_products
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
